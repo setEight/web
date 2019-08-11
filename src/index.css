@@ -1,0 +1,15 @@
+body {
+  background-color: #fff;
+  touch-action: none;
+}
+figure {
+  margin: 10px 10px;
+  display: inline-block;
+}
+figure img {
+  width: 100px;
+}
+img.responsive_img {
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */
