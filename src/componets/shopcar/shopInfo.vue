@@ -26,7 +26,7 @@
                         <input type="text" readonly class="pull-left" v-model="shopInfo.cou">
                         <mt-button type="default" class="pull-left" @click="addCou">+</mt-button>
                     </p>-->
-                    <numBox :maxNum="shopDes.stock_quantity" :count="1" class="numBox" @getCount="getSelectorCount"></numBox>
+                    <numBox :maxNum="shopDes.stock_quantity" :count="count" class="numBox" @getCount="getSelectorCount"></numBox>
                     <div class="btn_buy">
                         <mt-button type="primary">立即购买</mt-button>
                         <mt-button type="danger" @click="insertBall">加入购物车</mt-button>
@@ -150,7 +150,6 @@
             },
             end() {
                 this.isShow = true;
-                this.$store.commit('getCount');
             },
             insertBall(){
                 if (this.isShow){
