@@ -1,11 +1,12 @@
 <template>
     <div class="home_container vue_container">
         <!--banner-->
-        <mt-swipe :auto="2000">
-            <mt-swipe-item v-for="item in banner" :key="item.id">
-                <img :src="item.img" alt="" class="responsive_img">
-            </mt-swipe-item>
-        </mt-swipe>
+        <!--<mt-swipe :auto="2000">-->
+            <!--<mt-swipe-item v-for="item in banner" :key="item.id">-->
+                <!--<img :src="item.img" alt="" class="responsive_img">-->
+            <!--</mt-swipe-item>-->
+        <!--</mt-swipe>-->
+        <banner :banner="banner" class="responsive"></banner>
         <!--六宫格-->
         <div class="mui-content">
             <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+    import banner from '../common/swiper.vue'
     export default {
         name: "home",
         data() {
@@ -35,6 +37,9 @@
         },
         created(){
             this.getBanner();
+        },
+        components:{
+          banner
         },
         methods: {
             getBanner() {

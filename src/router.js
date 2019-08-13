@@ -30,7 +30,10 @@ const router = new VueRouter({
         {path:'/home/pic/:id',component:DesPic},
         {path:'/home/msg/:id',component:DesMsg},
     ],
-    linkActiveClass: 'mui-active'
+    linkActiveClass: 'mui-active',
+    scrollBehavior (to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    }
 });
 
 export default router;

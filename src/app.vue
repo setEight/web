@@ -2,15 +2,18 @@
     <div class="app_container vue_container">
         <!--header-->
         <mt-header fixed title="seiEight">
-            <a slot="left" @click="getBack" v-if="flag">
-                <mt-button icon="back"></mt-button>
+            <a slot="left" @click="getBack" v-show="flag">
+                <mt-button icon="back">返回</mt-button>
             </a>
         </mt-header>
 
-        <!--router-view-->
-        <transition>
-            <router-view></router-view>
-        </transition>
+
+                <!--router-view-->
+                <transition>
+                    <router-view></router-view>
+                </transition>
+
+
 
         <!--tabbar-->
         <nav class="mui-bar mui-bar-tab">
@@ -23,7 +26,7 @@
                 <span class="mui-tab-label">会员</span>
             </router-link>
             <router-link class="my-mui-tab-item" to="/shopcar">
-                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
+                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">{{$store.getters.getCount}}</span></span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
             <router-link class="my-mui-tab-item" to="/search">
@@ -40,12 +43,18 @@
         data(){
             return {
                 link: this.$route.path,
-                flag:false
+                flag:false,
+                /*count: this.$store.state.cou,
+                cou:0*/
             }
+        },
+        created(){
+            // this.$store.commit('getCount');
+            this.getPath();
         },
         methods:{
             getBack(){
-                history.back();
+                this.$router.back();
             },
             getPath(){
                 if (this.$route.path === '/home') {
@@ -56,7 +65,7 @@
             }
         },
         watch:{
-            $route:'getPath'
+            $route:'getPath',
         }
     }
 </script>

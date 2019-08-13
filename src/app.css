@@ -59,15 +59,12 @@
   }
 }
 .vue_container {
-  position: relative;
   max-width: 800px;
   min-width: 320px;
-  height: 100%;
   margin: 0 auto;
 }
 body {
   background-color: #fff;
-  touch-action: none;
 }
 figure {
   margin: 0.1rem 0.1rem;
@@ -89,5 +86,33 @@ img.responsive_img {
 .photoInfo_container p {
   font-size: 0.12rem;
   line-height: 0.14rem;
+}
+.mint-swipe {
+  height: 200px;
+  text-align: center;
+}
+.mint-swipe img {
+  height: 100%;
+}
+.responsive .mint-swipe {
+  height: 2rem;
+}
+.responsive .mint-swipe img {
+  width: 100%;
+  height: 100%;
+}
+.shopcar_container .content p span {
+  float: left;
+}
+.shopcar_container .content p .numBox {
+  float: left;
+}
+.shopcar_container .content p .numBox .mui-numbox {
+  width: 100px;
+  padding: 0 30px;
+  height: auto;
+}
+.shopcar_container .content p .numBox .mui-numbox .input {
+  text-align: center;
 }
 /*# sourceMappingURL=app.css.map */
